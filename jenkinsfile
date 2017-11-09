@@ -17,6 +17,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                sh '/usr/bin/docker kill $(/usr/bin/docker ps -q)'
+                sh '/usr/bin/docker run -d --name mycontainer -p 80:80 flaskapp'
             }
         }
     }
