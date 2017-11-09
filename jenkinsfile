@@ -5,7 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh '/usr/bin/docker build -t flaskapp /home/ec2-user/helloworld/docker'
+                checkout scm
+                sh '/usr/bin/docker build -t flaskapp .'
             }
         }
         stage('Test') {
