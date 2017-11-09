@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello Jenkins from Flask"
+    return "Docker build v2.0"
 
 if __name__ == "__main__":
     # Only for debugging while developing
