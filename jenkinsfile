@@ -18,7 +18,8 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh '/usr/bin/docker kill $(/usr/bin/docker ps -q)'
-                sh '/usr/bin/docker run -d --name mycontainer -p 80:80 flaskapp'
+                sh '/usr/bin/docker rm flaskcontainer'
+                sh '/usr/bin/docker run -d --name flaskcontainer -p 80:80 flaskapp'
             }
         }
     }
